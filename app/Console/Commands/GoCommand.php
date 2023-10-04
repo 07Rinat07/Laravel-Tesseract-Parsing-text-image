@@ -26,10 +26,10 @@ class GoCommand extends Command
      */
     public function handle()
     {
-        $image = public_path('/text.png');
+        $image = public_path('/doc.test.jpg');
         $tesseract = new TesseractOCR($image);
 
-        $content = $tesseract->run();
+        $content = $tesseract->lang('rus')->run();
         dd($content);
     }
 }
